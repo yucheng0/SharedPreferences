@@ -11,8 +11,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
      val accountRecored = AccountRecord(false,"w06@gmail.com","w")
-        accountRecored.save(this)
-        accountRecored.read(this)
+        accountRecored.save(this)   //寫到SharedPreferences 內, 檔名是固定MyShared
+        accountRecored.read(this)  //得到x,y,z值
+        Log.d(TAG, "x,y,z: ${accountRecored.x},${accountRecored.y},${accountRecored.z}} ")
+
  /*           val sharedPreferences = getSharedPreferences("MyShared",Context.MODE_PRIVATE)          //檔名:MyShared.xml
             val editor = sharedPreferences.edit()
             editor.putBoolean("remeberme",true)
